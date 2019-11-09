@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion build_version.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion build_version.minSdkVersion
+        targetSdkVersion build_version.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    lintOptions {
+        abortOnError false
+        lintConfig rootProject.file('lint.xml')
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api libs.constraint
+    api libs.appcompat
+    api libs.recyclerview
+
+    api libs.kotlin_stdlib
+    api libs.core_ktx
+    api libs.activity_ktx
+    api libs.fragment_ktx
+    api libs.jetpack_lifecycle_extensions
+    api libs.jetpack_viewmodel
+
+
+    api libs.multidex
+
+
+    /*network start*/
+    api 'com.squareup.retrofit2:retrofit:2.6.2'
+    api 'com.squareup.retrofit2:converter-gson:2.6.2'
+    api 'com.squareup.okhttp3:logging-interceptor:4.2.0'
+    api 'com.google.code.gson:gson:2.8.6'
+    api 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
+    /*network end*/
+
+    //刷新框架 1.1.0 androidx 版本
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    api 'com.ikang.libglide:libglide:1.1.2'
+
+
+}

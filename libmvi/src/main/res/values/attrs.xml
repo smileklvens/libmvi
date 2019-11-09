@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="T">
+
+        <attr name="isShowSearchView" format="boolean"/>
+        <attr name="rightButtonIcon_left" format="reference"/>
+        <attr name="rightButtonText_left" format="string|reference"/>
+        <attr name="rightButtonIcon_right" format="reference"/>
+        <attr name="rightButtonText_right" format="string|reference"/>
+        <attr name="leftButtonIcon" format="reference"/>
+        <attr name="leftButtonText" format="string|reference"/>
+
+    </declare-styleable>
+
+
+</resources>

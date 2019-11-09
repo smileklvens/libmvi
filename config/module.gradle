@@ -1,0 +1,139 @@
+if (isBuildModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+    configSigning project
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        if (isBuildModule.toBoolean()) {
+            multiDexEnabled true
+        }else{
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            if (isBuildModule.toBoolean()) {
+                //独立运行
+                manifest.srcFile 'src/main/alone/AndroidManifest.xml'
+            } else {
+                //合并到宿主
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                resources {
+                    //正式版本时，排除alone文件夹下所有调试文件
+                    exclude 'src/main/alone/*'
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            if (isBuildModule.toBoolean()) {
+                shrinkResources true
+            }
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        if (isBuildModule.toBoolean()) {
+            exclude 'META-INF/*'
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.design
+    implementation libs.recyclerview
+
+    api libs.kotlin_stdlib
+    api libs.kotlin_coroutines
+
+    api libs.jetpack_lifecycle_extensions
+    api libs.jetpack_lifecycle_java8
+    kapt libs.jetpack_lifecycle_compiler
+
+    api libs.jetpack_viewmodel
+
+
+    // rx
+    api libs.rxkotlin
+    api libs.rxandroid
+
+
+    // autodispose
+    api libs.autodispose
+    api libs.autodispose_ktx
+    api libs.autodispose_android_ktx
+    api libs.autodispose_archs_ktx
+
+    // kodein
+    api libs.kodein
+    api libs.kodein_android
+    api libs.kodein_androidx
+
+    // arrow
+    api libs.arrow
+
+}
+
+
+
+def configSigning(Project pro) {
+    File signPropertiesFile = file("${rootDir.path}/sign/keystore.properties")
+    if (!signPropertiesFile.exists()) return
+
+    println "$pro.name config sign start..."
+    pro.android {
+        Properties properties = new Properties()
+        properties.load(new FileInputStream(signPropertiesFile))
+        signingConfigs {
+            release {
+                storeFile new File(signPropertiesFile.getParent(), properties['keystore'])
+                storePassword properties['storePassword']
+                keyAlias properties['keyAlias']
+                keyPassword properties['keyPassword']
+            }
+        }
+        buildTypes.release.signingConfig signingConfigs.release
+    }
+    println "$pro.name config sign end..."
+}
+
+
+
+
