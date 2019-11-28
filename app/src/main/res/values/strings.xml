@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Staff-App</string>
+
+    <string name="nav_bar_home">主页</string>
+    <string name="nav_bar_user">我的</string>
+
+    <string name="nav_bar_login">跳转到登陆</string>
+
 </resources>

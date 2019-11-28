@@ -14,9 +14,11 @@
     <dimen name="common_padding_small">5dp</dimen>
     <dimen name="common_radius">6dp</dimen>
     <dimen name="common_border_size">1px</dimen>
-
     <dimen name="text_small_size">12sp</dimen>
     <dimen name="text_middle_size">14sp</dimen>
     <dimen name="text_big_size">16sp</dimen>
     <dimen name="text_large_size">18sp</dimen>
+
+    <dimen name="dialog_width">120dp</dimen>
+
 </resources>

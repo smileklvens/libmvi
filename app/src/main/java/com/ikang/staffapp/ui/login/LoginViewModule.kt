@@ -1,11 +1,11 @@
 package com.ikang.staffapp.ui.login
 
 import androidx.lifecycle.MutableLiveData
-import com.ikang.libmvi.base.viewmodel.BaseViewModel
-import com.ikang.staffapp.data.vo.OauthResp
+import com.ikang.libmvi.base.BaseViewModel
+import com.ikang.libmvi.network.RetrofitFactory
+import com.ikang.staffapp.data.entity.OauthResp
 import com.ikang.staffapp.http.ApiService
 import com.ikang.staffapp.http.BASE_URL
-import com.ikang.staffapp.http.RetrofitFactory
 import com.ikang.staffapp.http.interceptor.IKGlobalIntercept
 
 /**
@@ -39,15 +39,13 @@ class LoginViewModule : BaseViewModel() {
         params.put("captcha", "123456")
         params.put("captcha_id", "000000")
 
-        request({ service.getLoginToken(params) }, {
+        launchOnlyresult({ service.getLoginToken(params) }, {
             _mComicDetailResponse.value = it
-
         })
     }
 
 
-    fun getLoginSession(formMap: Map<String, String>) {
-
+    fun getLoginSession() {
 
 
         val params = mutableMapOf<String, String>()
@@ -60,7 +58,7 @@ class LoginViewModule : BaseViewModel() {
         params.put("captcha", "123456")
         params.put("captcha_id", "000000")
 
-        request({ service.getLoginSession(params) }, {
+        launchOnlyresult({ service.getLoginSession(params) }, {
             _mComicDetailResponse.value = it
         })
     }

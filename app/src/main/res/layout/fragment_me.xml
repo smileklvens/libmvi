@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/MatchMatch.Vertical">
+
+    <TextView
+            android:id="@+id/tv"
+            style="@style/MatchMatch"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/nav_bar_user" />
+
+</LinearLayout>

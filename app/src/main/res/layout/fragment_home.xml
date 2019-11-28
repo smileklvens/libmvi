@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.ikang.staffapp.ui.fragment.home.HomeViewModel" />
+    </data>
+
+    <LinearLayout style="@style/MatchMatch.Vertical">
+        <TextView
+                style="@style/MatchWrap"
+                android:gravity="center"
+                android:onClick="@{()->viewModel.onClickALogin()}"
+                android:padding="10dp"
+                android:text="@string/nav_bar_login" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/mSmartRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_home"
+                    style="@style/MatchMatch"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_article_list" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    </LinearLayout>
+</layout>

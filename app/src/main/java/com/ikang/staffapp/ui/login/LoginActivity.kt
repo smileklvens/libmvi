@@ -17,20 +17,29 @@
 package com.ikang.staffapp.ui.login
 
 import android.os.Bundle
+import com.ikang.libmvi.base.NoViewModel
 import com.ikang.libmvi.base.ui.activity.BaseActivity
 import com.ikang.staffapp.R
 import com.ikang.staffapp.databinding.ActivityLoginBinding
 
 /**
- * A 'Trampoline' activity for sending users to an appropriate screen on launch.
+ * 如果不需要自己定义ViewModel，可以使用公共的NoViewModel
  */
-class LoginActivity : BaseActivity<ActivityLoginBinding>() {
-
+class LoginActivity : BaseActivity<NoViewModel,ActivityLoginBinding>() {
 
     override fun layoutId(): Int = R.layout.activity_login
 
-    override fun initData(savedInstanceState: Bundle?) {
-        super.initData(savedInstanceState)
+
+    override fun initView(savedInstanceState: Bundle?) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, LoginFragment.newInstance())
+            .commitNow()
+
         setToolBar("ff")
+    }
+
+    override fun initData() {
+
     }
 }

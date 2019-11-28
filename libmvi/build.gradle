@@ -44,35 +44,18 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    api libs.constraint
-    api libs.appcompat
-    api libs.recyclerview
+    //androidx
+    api androidxs
+    //network
+    api network
 
-    api libs.kotlin_stdlib
-    api libs.core_ktx
-    api libs.activity_ktx
-    api libs.fragment_ktx
-    api libs.jetpack_lifecycle_extensions
-    api libs.jetpack_viewmodel
-
-
-    api libs.multidex
-
-
-    /*network start*/
-    api 'com.squareup.retrofit2:retrofit:2.6.2'
-    api 'com.squareup.retrofit2:converter-gson:2.6.2'
-    api 'com.squareup.okhttp3:logging-interceptor:4.2.0'
-    api 'com.google.code.gson:gson:2.8.6'
-    api 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
-
-    /*network end*/
+//    api libs.material_dialogs_core
+//    api libs.material_dialogs_lifecycle
+    api libs.BRVAH
 
     //刷新框架 1.1.0 androidx 版本
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
     api 'com.ikang.libglide:libglide:1.1.2'
-
-
 }

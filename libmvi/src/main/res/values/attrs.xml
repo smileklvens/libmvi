@@ -14,4 +14,13 @@
     </declare-styleable>
 
 
+    <!-- TitleBar -->
+    <declare-styleable name="TitleBar">
+        <attr name="background"/>
+        <attr name="title"/>
+        <attr name="leftImg" format="reference" />
+        <attr name="rightImg" format="reference" />
+        <attr name="rightText" format="reference" />
+    </declare-styleable>
+
 </resources>

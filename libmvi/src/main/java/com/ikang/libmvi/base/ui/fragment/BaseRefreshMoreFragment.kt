@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.ikang.libmvi.base.BaseViewModel
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 
 
@@ -14,7 +15,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
  * @version 1.0.0
  * @describe {@link #}
  */
-abstract class BaseRefreshMoreFragment<VB : ViewDataBinding> : BaseRefreshFragment<VB>(),
+abstract class BaseRefreshMoreFragment<VM : BaseViewModel, DB : ViewDataBinding> : BaseRefreshFragment<VM,DB>(),
     BaseQuickAdapter.OnItemClickListener, BaseQuickAdapter.OnItemLongClickListener {
 
     fun bindSwipeRecycler(
@@ -65,6 +66,7 @@ abstract class BaseRefreshMoreFragment<VB : ViewDataBinding> : BaseRefreshFragme
 
 
     abstract fun onLoadMore()
+
 
 
     /**
