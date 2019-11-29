@@ -1,9 +1,9 @@
 package com.kotlin.mall.ui.fragment
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.aleyn.mvvm.event.Message
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 /*
     主界面  Bind 写法
  */
+@Suppress("UNCHECKED_CAST")
 class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>() {
 
     private val mAdapter by lazy { HomeListAdapter() }
@@ -35,14 +36,14 @@ class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>
     override fun layoutId(): Int = R.layout.fragment_home
 
 
-    @SuppressLint("ResourceType")
     override fun initView(savedInstanceState: Bundle?) {
-        bindRefreshLayout(mSmartRefreshLayout)
+        bindSwipeRecycler(
+            mSmartRefreshLayout,
+            rv_home,
+            mAdapter as BaseQuickAdapter<*, BaseViewHolder>
+        )
+        rv_home.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
 
-        with(rv_home) {
-            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
-            adapter = mAdapter
-        }
         mAdapter.apply {
             //banner
             banner = XBanner(context)
@@ -54,7 +55,6 @@ class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>
                 )
             banner.loadImage(GlideImageLoader())
             addHeaderView(banner)
-
         }
 
         observe(viewModel.mBanners) {

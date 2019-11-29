@@ -10,19 +10,15 @@
                 type="com.ikang.staffapp.data.entity.ArticlesBean" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/commonItem">
 
         <TextView
                 android:id="@+id/tv_project_list_atticle_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="?selectableItemBackgroundBorderless"
                 android:paddingStart="@dimen/dp_4"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-              />
+                app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
                 android:id="@+id/iv_project_list_atticle_ic"
@@ -30,9 +26,9 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="@dimen/dp_10"
                 android:scaleType="centerCrop"
+                app:imageUrl="@{itemData.url}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_type"
-                tools:ignore="ContentDescription" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_type" />
 
         <TextView
                 android:id="@+id/tv_project_list_atticle_title"
@@ -43,11 +39,11 @@
                 android:ellipsize="end"
                 android:lineSpacingExtra="@dimen/dp_4"
                 android:maxLines="2"
+                android:text="@{itemData.title}"
                 android:textSize="@dimen/sp_14"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_project_list_atticle_ic"
-                app:layout_constraintTop_toTopOf="@+id/iv_project_list_atticle_ic"
-                android:text="@{itemData.title}" />
+                app:layout_constraintTop_toTopOf="@+id/iv_project_list_atticle_ic" />
 
 
         <TextView
@@ -55,10 +51,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
+                android:text="@{itemData.desc}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_project_list_atticle_title"
-                app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_title"
-                android:text="@{itemData.desc}"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_title" />
 
         <TextView
                 android:id="@+id/tv_project_list_atticle_auther"
@@ -68,11 +64,14 @@
                 app:layout_constraintTop_toTopOf="@+id/tv_project_list_atticle_time"
                 tools:text="auther" />
 
-        <View
-                style="@style/DividerFixedHeight"
-                android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_auther" />
+        <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{@string/url}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

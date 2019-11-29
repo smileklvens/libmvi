@@ -4,18 +4,22 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
                 name="viewModel"
                 type="com.ikang.staffapp.ui.fragment.home.HomeViewModel" />
     </data>
 
     <LinearLayout style="@style/MatchMatch.Vertical">
+
         <TextView
                 style="@style/MatchWrap"
+                android:clickable="true"
+                android:focusable="true"
                 android:gravity="center"
-                android:onClick="@{()->viewModel.onClickALogin()}"
                 android:padding="10dp"
-                android:text="@string/nav_bar_login" />
+                android:text="@string/nav_bar_login"
+                app:websiteLink="@{@string/privacy_policy_url}" />
 
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
                 android:id="@+id/mSmartRefreshLayout"

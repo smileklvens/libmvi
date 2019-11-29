@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Lib Mvi</string>
     <string name="now_loading">加载中…</string>
+    <string name="url_null_tip">加载链接不能为空</string>
+
+    <string name="privacy_policy_url" translatable="false">https://www.baidu.com/</string>
 
 </resources>

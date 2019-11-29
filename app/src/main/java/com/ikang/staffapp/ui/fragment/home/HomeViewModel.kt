@@ -16,6 +16,7 @@ import com.ikang.staffapp.data.entity.HomeListBean
 class HomeViewModel : BaseViewModel() {
 
 
+
     val mBanners = MutableLiveData<List<BannerBean>>()
     val projectData = MutableLiveData<HomeListBean>()
 
@@ -31,7 +32,7 @@ class HomeViewModel : BaseViewModel() {
                 mutableListOf.add(
                     BannerBean(
                         "区块链养狗领取 百度莱茨狗区块链养狗领取 百度莱茨狗",
-                        "https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"
+                        "https://api.dujin.org/pic/"
                     )
                 )
             }
@@ -47,7 +48,8 @@ class HomeViewModel : BaseViewModel() {
                 mutableListOf.add(
                     ArticlesBean(
                         "区块链养狗领取 百度莱茨狗区块链养狗领取 百度莱茨狗",
-                        " 百度莱茨狗区块链养狗领取 百度莱茨狗"
+                        " 百度莱茨狗区块链养狗领取 百度莱茨狗",
+                        "https://api.dujin.org/pic/"
                     )
                 )
 

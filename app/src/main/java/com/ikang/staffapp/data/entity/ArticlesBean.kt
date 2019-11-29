@@ -7,6 +7,7 @@ data class HomeListBean(
 )
 
 data class ArticlesBean(
-    var title: String? = null,
-    var desc: String? = null
+    var title: String,
+    var desc: String,
+    var url: String
 )

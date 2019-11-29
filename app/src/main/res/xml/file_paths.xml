@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <external-path
+            name="camera_photos"
+            path="" />
+        <external-files-path
+            name="extfiles"
+            path="autoupdatecache/" />
+        <external-cache-path
+            name="extcachs"
+            path="autoupdatecache/" />
+        <cache-path
+            name="intcachs"
+            path="autoupdatecache/" />
+        <root-path name="root" path="." />
+    </paths>
+
+    <external-cache-path name="name" path="path" />
+    <cache-path name="name" path="path" />
+</resources>

@@ -27,7 +27,7 @@ import java.lang.reflect.ParameterizedType
 private val mViewModel by lazy { createViewModel<LoginViewModule>() }
 
  */
-abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment(), IBaseView{
+abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment(), IBaseView {
     //是否第一次加载
     private var isFirst: Boolean = true
     var baseActivity: BaseActivity<*, *>? = null
@@ -147,7 +147,6 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
     }
 
 
-
     /**
      * 创建 ViewModel
      */
@@ -157,7 +156,8 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
         if (type is ParameterizedType) {
             val tp = type.actualTypeArguments[0]
             val tClass = tp as? Class<VM> ?: BaseViewModel::class.java
-            viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(tClass) as VM
+            viewModel =
+                ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(tClass) as VM
         }
     }
 

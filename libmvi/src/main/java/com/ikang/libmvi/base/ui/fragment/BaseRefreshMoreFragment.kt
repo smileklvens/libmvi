@@ -15,7 +15,8 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
  * @version 1.0.0
  * @describe {@link #}
  */
-abstract class BaseRefreshMoreFragment<VM : BaseViewModel, DB : ViewDataBinding> : BaseRefreshFragment<VM,DB>(),
+abstract class BaseRefreshMoreFragment<VM : BaseViewModel, DB : ViewDataBinding> :
+    BaseRefreshFragment<VM, DB>(),
     BaseQuickAdapter.OnItemClickListener, BaseQuickAdapter.OnItemLongClickListener {
 
     fun bindSwipeRecycler(
@@ -31,17 +32,16 @@ abstract class BaseRefreshMoreFragment<VM : BaseViewModel, DB : ViewDataBinding>
         refreshLayout: SmartRefreshLayout,
         recyclerView: RecyclerView,
         lm: RecyclerView.LayoutManager,
-        adapter: BaseQuickAdapter<*, BaseViewHolder>
+        mAdapter: BaseQuickAdapter<*, BaseViewHolder>
     ) {
         bindRefreshLayout(refreshLayout)
 
-        val mRecyclerView: RecyclerView = recyclerView
-        mRecyclerView.layoutManager = lm
-        mRecyclerView.adapter = adapter
-
-        val quickAdapter: BaseQuickAdapter<*, BaseViewHolder> = adapter
-        quickAdapter.onItemClickListener = this
-        quickAdapter.onItemLongClickListener = this
+        with(recyclerView) {
+            layoutManager = lm
+            adapter = mAdapter
+        }
+        mAdapter.onItemClickListener = this
+        mAdapter.onItemLongClickListener = this
         mRefresh.setOnLoadMoreListener {
             onLoadMore()
         }
@@ -66,7 +66,6 @@ abstract class BaseRefreshMoreFragment<VM : BaseViewModel, DB : ViewDataBinding>
 
 
     abstract fun onLoadMore()
-
 
 
     /**

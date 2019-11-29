@@ -62,7 +62,7 @@
     <style name="commonItem">
         <item name="android:scrollbars">none</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/common_header_bar_height</item>
+        <item name="android:layout_height">@dimen/dialog_width</item>
         <item name="android:background">@drawable/comm_settting_item_selector</item>
     </style>
 
