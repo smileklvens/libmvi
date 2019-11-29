@@ -17,8 +17,6 @@ android {
         ndk {
             abiFilters 'armeabi-v7a'//,'armeabi', x86
         }
-        /*仅保留中文*/
-        resConfigs "zh", "xxhdpi", "ldltr", "desk"
     }
 
     buildTypes {

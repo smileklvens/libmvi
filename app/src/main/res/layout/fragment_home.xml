@@ -18,7 +18,7 @@
                 android:focusable="true"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/nav_bar_login"
+                android:text="@string/nav_to_x5"
                 app:websiteLink="@{@string/privacy_policy_url}" />
 
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
