@@ -1,6 +1,7 @@
 package com.ikang.staffapp.ui
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
@@ -44,6 +45,14 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
     private fun initFragment() {
         mStack.add(mHomeFragment)
         mStack.add(mMeFragment)
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(true)
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
     }
 
     private fun initPage() {

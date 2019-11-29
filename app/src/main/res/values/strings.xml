@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Staff-App</string>
 
     <string name="nav_bar_home">主页</string>
@@ -7,4 +7,7 @@
     <string name="nav_bar_login">跳转到登陆</string>
 
     <string name="url">https://avatar.csdn.net/4/0/7/1_zhuhai__yizhi.jpg</string>
+
+    <string name="nav_bar_back" tools:ignore="ExtraTranslation">退后台</string>
+
 </resources>

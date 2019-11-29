@@ -27,6 +27,10 @@ class MeFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
         }
+
+        tv_quit.click {
+           toast("lalala")
+        }
     }
 
 }
