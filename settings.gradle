@@ -1,1 +1,1 @@
-include ':app', ':libmvi'
+include ':app', ':libmvi', ':libutils'

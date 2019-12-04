@@ -23,4 +23,20 @@
         <attr name="rightText" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="ClearEditText">
+        <!--提示文字-->
+        <attr name="etHint" format="reference"/>
+        <!--是否为密码-->
+        <attr name="etPwd" format="boolean"/>
+        <!--是否为数字-->
+        <attr name="etNumber" format="boolean"/>
+        <!--是否为密码&数字-->
+        <attr name="pwdAndNumber" format="boolean"/>
+        <!--最大字数-->
+        <attr name="etMaxLength" format="integer"/>
+        <!--是否需要格式化手机号-->
+        <attr name="etIsFormatPhone" format="boolean"/>
+        <!--是否需要显示密码小眼睛-->
+        <attr name="etIsShowEye" format="boolean"/>
+    </declare-styleable>
 </resources>

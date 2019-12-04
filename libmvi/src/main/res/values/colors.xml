@@ -4,6 +4,8 @@
     <color name="baseColorPrimaryDark">#C2BEBE</color>
     <color name="baseColorAccent">#D81B60</color>
 
+    <color name="common_main_color">#D81B60</color>
+
     <color name="common_divider">#d4d4d4</color>
     <color name="common_white">#ffffff</color>
     <color name="common_blue_dark">#0288d1</color>
@@ -25,4 +27,9 @@
     <color name="basic_black">#000000</color>
     <color name="basic_color_fafafa">#fafafa</color>
 
+    <color name="basic_color_cccccc">#cccccc</color>
+    <!--占位背景颜色-->
+    <color name="basic_color_placeholder">#868483</color>
+    <color name="basic_color_e1e0df">#e1e0df</color>
+    <color name="basic_color_2a2827">#2a2827</color>
 </resources>

@@ -24,4 +24,7 @@
     <string name="nav_to_x5" >nav_to_x5</string>
     <string name="api">调接口</string>
 
+    <string name="login_input_phone">请输入手机号</string>
+    <string name="login_sms_verification_code">短信验证码</string>
+    <string name="login_login">登录</string>
 </resources>

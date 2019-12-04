@@ -1,21 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
         <FrameLayout
-                android:id="@+id/container"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/loginIconIv"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:background="@color/basic_color_placeholder"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="88dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.ikang.staffapp.widget.EdittextClearCombination
+                android:id="@+id/loginPhoneNumberEdt"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                tools:ignore="MissingConstraints" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:etHint="@string/login_input_phone"
+                app:etNumber="true"
+                app:etMaxLength="13"
+                app:etIsShowEye="false"
+                app:etIsFormatPhone="true"
+                app:layout_constraintTop_toBottomOf="@+id/loginIconIv"/>
+
+
+
+            <com.ikang.staffapp.widget.EdittextClearCombination
+                android:id="@+id/loginPasswordEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:etHint="@string/login_sms_verification_code"
+                app:etNumber="true"
+                app:etMaxLength="6"
+                app:etIsShowEye="false"
+                app:layout_constraintTop_toBottomOf="@+id/loginPhoneNumberEdt"/>
+
+
+            <TextView
+                android:id="@+id/loginBtnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="48dp"
+                android:background="@drawable/btn_gray_big_corner"
+                android:gravity="center"
+                android:text="@string/login_login"
+                android:textColor="@color/common_white"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@+id/loginPasswordEdt"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>

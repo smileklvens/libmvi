@@ -32,7 +32,7 @@ class HomeViewModel : BaseViewModel() {
                 mutableListOf.add(
                     BannerBean(
                         "区块链养狗领取 百度莱茨狗区块链养狗领取 百度莱茨狗",
-                        "https://api.dujin.org/pic/"
+                        "https://ikapp-image.health.ikang.com/2019/11/22/201911221355300410.png"
                     )
                 )
             }
@@ -49,7 +49,7 @@ class HomeViewModel : BaseViewModel() {
                     ArticlesBean(
                         "区块链养狗领取 百度莱茨狗区块链养狗领取 百度莱茨狗",
                         " 百度莱茨狗区块链养狗领取 百度莱茨狗",
-                        "https://api.dujin.org/pic/"
+                        "https://ikapp-image.health.ikang.com/2019/11/22/201911221355300410.png"
                     )
                 )
 

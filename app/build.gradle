@@ -37,13 +37,12 @@ android {
 
 dependencies {
     implementation project(path: ':libmvi')
-
+    api project(path: ':libutils')
     //底部导航
     api 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
-    api  'com.github.xiaohaibin:XBanner:androidx_v1.0.2'
+    api 'com.github.xiaohaibin:XBanner:androidx_v1.0.2'
 
 
-
-
-
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
