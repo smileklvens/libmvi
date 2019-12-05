@@ -1,5 +1,6 @@
-# libmvi
-项目2分支一个采用viewmodule、一个利用了databing，建议直接使用mvvm分支，现大致介绍下mvvm分支
+# libmvi 
+项目2分支：master采用viewmodule、mvvm利用databing和viewmodule，建议直接使用mvvm分支更灵活，现大致介绍下mvvm分支
+
 该项目是由kotlin、androidx、协程整合，旨在帮助开发者快速搭建项目，敏捷开发采用：
 1. 网络请求采用协程+retrofit 
 2. 采用viewmodule和databing 
