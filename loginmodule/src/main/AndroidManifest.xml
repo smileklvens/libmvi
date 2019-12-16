@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.ikang.loginmodule">
+
+
+    <application>
+        <activity android:name="com.ikang.staffapp.ui.login.LoginActivity" />
+
+        <meta-data
+                android:name="com.ikang.loginmodule.LoginApp"
+                android:value="ConfigAppLife" />
+    </application>
+</manifest>
+
+

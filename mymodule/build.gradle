@@ -1,0 +1,17 @@
+apply {
+    from "${rootDir.path}/config/module.gradle"
+}
+
+android {
+    defaultConfig {
+        //如果是独立模块，则使用当前组件的包名
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.ikang.my"
+        }
+    }
+    //统一资源前缀，规范资源引用
+    resourcePrefix "my_"
+}
+
+
+

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        style="@style/MatchMatch.Vertical">
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/MatchMatch.Vertical"
+        tools:ignore="ResourceName">
 
     <TextView
             android:id="@+id/tv"
             style="@style/MatchWrap"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/nav_bar_user" />
+            android:text="nav_bar_user" />
 
     <TextView
             android:id="@+id/tv_quit"

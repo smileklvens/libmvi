@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import com.ikang.libmvi.base.ui.fragment.BaseRefreshFragment
 import com.ikang.libmvi.util.ext.observe
-import com.ikang.staffapp.R
-import com.ikang.staffapp.databinding.FragmentLoginBinding
+import com.ikang.loginmodule.R
+import com.ikang.loginmodule.databinding.FragmentLoginBinding
+
 import kotlinx.android.synthetic.main.fragment_login.*
 
 
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_login.*
  * @version 1.0.0
  * @describe [.]
  */
-class LoginFragment : BaseRefreshFragment<LoginViewModule,FragmentLoginBinding>() {
+class LoginFragment : BaseRefreshFragment<LoginViewModule, FragmentLoginBinding>() {
 
     companion object {
         fun newInstance() = LoginFragment()
@@ -28,7 +29,7 @@ class LoginFragment : BaseRefreshFragment<LoginViewModule,FragmentLoginBinding>(
     override fun initView(savedInstanceState: Bundle?) {
         bindRefreshLayout(mSmartRefreshLayout)
         observe(viewModel.mComicDetailResponse) {
-                        Log.i("token",it.access_token)
+            Log.i("token", it.access_token)
 
             viewModel.getLoginSession()
         }

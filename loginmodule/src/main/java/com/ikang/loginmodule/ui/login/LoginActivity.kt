@@ -20,6 +20,8 @@ import android.os.Bundle
 import com.ikang.libmvi.base.NoViewModel
 import com.ikang.libmvi.base.ui.activity.BaseActivity
 import com.ikang.libmvi.util.ext.click
+import com.ikang.loginmodule.R
+import com.ikang.loginmodule.databinding.ActivityLoginBinding
 import com.ikang.staffapp.R
 import com.ikang.staffapp.databinding.ActivityLoginBinding
 import com.ikang.staffapp.widget.EdittextClearCombination
@@ -28,7 +30,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 /**
  * 如果不需要自己定义ViewModel，可以使用公共的NoViewModel
  */
-class LoginActivity : BaseActivity<NoViewModel,ActivityLoginBinding>(), EdittextClearCombination.ITextStandardListener  {
+class LoginActivity : BaseActivity<NoViewModel, ActivityLoginBinding>(), EdittextClearCombination.ITextStandardListener  {
 
     //当前手机号是否合法
     private var telIsStandard = false

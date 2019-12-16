@@ -5,6 +5,8 @@ import android.content.Context
 import android.os.StrictMode
 import android.util.Log
 import androidx.multidex.MultiDex
+import com.ikang.libmvi.BuildConfig
+import com.ikang.providerservice.delegate.AppDelegate
 import com.tencent.smtt.sdk.QbSdk
 import com.tencent.smtt.sdk.QbSdk.PreInitCallback
 import kotlin.properties.Delegates
@@ -18,18 +20,30 @@ import kotlin.properties.Delegates
 open class BaseApp : Application() {
 
 
+    val mAppDelegate: AppDelegate by lazy { AppDelegate(this) }
+
     override fun onCreate() {
-//        if (BuildConfig.DEBUG) {
-//            enableStrictMode()
-//        }
         super.onCreate()
+        if (BuildConfig.DEBUG) {
+            enableStrictMode()
+        }
+
+        mAppDelegate.onCreate(this)
+
         instance = this
 
         initX5WebView()
     }
 
+    override fun onTerminate() {
+        super.onTerminate()
+        mAppDelegate.onTerminate(this)
+    }
+
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
+        mAppDelegate.attachBaseContext(this)
+
         MultiDex.install(this)
     }
 

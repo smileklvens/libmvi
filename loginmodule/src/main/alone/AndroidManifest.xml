@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.ikang.login">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+            android:name="com.ikang.libmvi.base.BaseApp"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="登录模块"
+            android:supportsRtl="true"
+            android:theme="@style/BaseAppTheme"
+            tools:ignore="GoogleAppIndexingWarning"
+            tools:replace="android:label">
+
+
+        <activity android:name="com.ikang.staffapp.ui.login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <meta-data
+                android:name="com.ikang.loginmodule.LoginApp"
+                android:value="ConfigAppLife" />
+    </application>
+</manifest>

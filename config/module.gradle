@@ -9,30 +9,23 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
-
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
-    }
+    compileSdkVersion build_version.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion build_version.minSdkVersion
+        targetSdkVersion build_version.targetSdkVersion
+        versionCode build_version.versionCode
+        versionName build_version.versionName
 
         if (isBuildModule.toBoolean()) {
             multiDexEnabled true
-        }else{
+        } else {
             consumerProguardFiles 'proguard-rules.pro'
         }
     }
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
             if (isBuildModule.toBoolean()) {
                 //独立运行
                 manifest.srcFile 'src/main/alone/AndroidManifest.xml'
@@ -73,44 +66,26 @@ android {
         disable "ResourceType"
         abortOnError false
     }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding {
+        enabled true
+    }
 }
 
 dependencies {
-    implementation libs.appcompat
-    implementation libs.design
-    implementation libs.recyclerview
-
-    api libs.kotlin_stdlib
-    api libs.kotlin_coroutines
-
-    api libs.jetpack_lifecycle_extensions
-    api libs.jetpack_lifecycle_java8
-    kapt libs.jetpack_lifecycle_compiler
-
-    api libs.jetpack_viewmodel
-
-
-    // rx
-    api libs.rxkotlin
-    api libs.rxandroid
-
-
-    // autodispose
-    api libs.autodispose
-    api libs.autodispose_ktx
-    api libs.autodispose_android_ktx
-    api libs.autodispose_archs_ktx
-
-    // kodein
-    api libs.kodein
-    api libs.kodein_android
-    api libs.kodein_androidx
-
-    // arrow
-    api libs.arrow
-
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':libmvi')
+//    业务交互模块
+    implementation project(path: ':providerservice')
 }
-
 
 
 def configSigning(Project pro) {

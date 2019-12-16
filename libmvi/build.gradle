@@ -48,6 +48,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':providerservice')
+
+
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //androidx
     api androidxs

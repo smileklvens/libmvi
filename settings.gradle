@@ -1,1 +1,2 @@
+include ':app', ':libmvi', ':loginmodule', ':providerservice', ':mymodule'
 include ':app', ':libmvi', ':libutils'
