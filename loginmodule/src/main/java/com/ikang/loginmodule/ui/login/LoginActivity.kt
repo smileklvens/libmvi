@@ -22,10 +22,9 @@ import com.ikang.libmvi.base.ui.activity.BaseActivity
 import com.ikang.libmvi.util.ext.click
 import com.ikang.loginmodule.R
 import com.ikang.loginmodule.databinding.ActivityLoginBinding
-import com.ikang.staffapp.R
-import com.ikang.staffapp.databinding.ActivityLoginBinding
-import com.ikang.staffapp.widget.EdittextClearCombination
+import com.ikang.loginmodule.ui.widget.EdittextClearCombination
 import kotlinx.android.synthetic.main.activity_login.*
+
 
 /**
  * 如果不需要自己定义ViewModel，可以使用公共的NoViewModel

@@ -1,11 +1,12 @@
-package com.ikang.staffapp.widget
+package com.ikang.loginmodule.ui.widget
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
-import android.graphics.Color
 import android.graphics.Typeface
-import android.text.*
+import android.text.Editable
+import android.text.InputFilter
+import android.text.InputType
+import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
@@ -15,16 +16,11 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
-import androidx.core.content.res.TypedArrayUtils.getText
-import androidx.core.widget.addTextChangedListener
-import androidx.databinding.DataBindingUtil
-import com.cxz.kotlin.baselibs.utils.CommonUtil
 import com.cxz.kotlin.baselibs.utils.CommonUtil.dp2px
 import com.ikang.libmvi.util.ext.then
 import com.ikang.libutils.utils.StringUtils
-import com.ikang.staffapp.R
+import com.ikang.loginmodule.R
 import kotlinx.android.synthetic.main.layout_edittext_cear_combination.view.*
-import java.util.jar.Attributes
 
 /**
  * @author ikang-renwei

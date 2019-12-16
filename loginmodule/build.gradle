@@ -15,5 +15,6 @@ android {
 
 dependencies {
 
+    implementation project(path: ':libutils')
 }
 

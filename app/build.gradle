@@ -37,7 +37,6 @@ android {
 
 dependencies {
     implementation project(path: ':libmvi')
-    api project(path: ':libutils')
 
     implementation project(path: ':mymodule')
     implementation project(path: ':loginmodule')
