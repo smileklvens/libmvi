@@ -2,11 +2,11 @@ package com.ikang.staffapp.ui
 
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ikang.libmvi.base.NoViewModel
 import com.ikang.libmvi.base.ui.activity.BaseActivity
 import com.ikang.staffapp.R
@@ -21,8 +21,7 @@ import java.util.*
  * @version 1.0.0
  * @describe {@link #}
  */
-class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
-
+class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickListener {
     //Fragment 栈管理
     private val mStack = Stack<Fragment>()
     //主界面Fragment
@@ -77,14 +76,40 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
        初始化底部导航切换事件
     */
     private fun initBottomNav() {
-        mBottomNavBar.setTabSelectedListener(object :
-            BottomNavigationBar.SimpleOnTabSelectedListener() {
-            override fun onTabSelected(position: Int) {
-                mViewPage.currentItem = position
-            }
-        })
+        bottomMenuHomeRl.setOnClickListener(this)
+//        mBottomNavBar.setTabSelectedListener(object :
+//            BottomNavigationBar.SimpleOnTabSelectedListener() {
+//            override fun onTabSelected(position: Int) {
+//                mViewPage.currentItem = position
+//            }
+//        })
     }
 
+    override fun onClick(v: View?) {
+        if (v != null) {
+            when(v.id){
+                R.id.bottomMenuHomeRl -> {
+                    setViewPageCurrentItem(0)
+                }
+                R.id.bottomMenuNewsRl -> {
+                    setViewPageCurrentItem(1)
+                }
+                R.id.bottomMenuWorkBenchRl -> {
+                    setViewPageCurrentItem(2)
+                }
+                R.id.bottomMenuScheduleRl -> {
+                    setViewPageCurrentItem(3)
+                }
+                R.id.bottomMenuMeRl -> {
+                    setViewPageCurrentItem(4)
+                }
+            }
+        }
+    }
+
+    private fun setViewPageCurrentItem(i: Int) {
+        mViewPage.currentItem = i
+    }
 
     override fun initData() {
     }

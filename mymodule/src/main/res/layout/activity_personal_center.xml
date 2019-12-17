@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="itemData"
+            type="com.ikang.staffapp.data.entity.MeListBean" />
+    </data>
+
+    <LinearLayout
+        style="@style/MatchMatch.Vertical">
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/mePersonalSmartRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mePersonalRecyclerView"
+                style="@style/MatchMatch"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:listitem="@layout/item_article_list" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

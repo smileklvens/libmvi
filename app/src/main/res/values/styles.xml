@@ -6,4 +6,31 @@
 
     </style>
 
+    <!--首页底部导航栏-RelativeLaout样式-->
+    <style name="main_ationbar_relativeLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!--首页底部导航栏-ImageView样式-->
+    <style name="main_ationbar_imageView">
+        <item name="android:layout_width">26dp</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="lottie_loop">false</item>
+        <item name="lottie_progress">100</item>
+        <item name="lottie_scale">2</item>
+    </style>
+
+    <!--首页底部导航栏-TextView样式-->
+    <style name="main_ationbar_textView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">@dimen/text_size_10_dp</item>
+        <item name="android:textColor">@color/text_bottom_ationbar_select</item>
+    </style>
+
 </resources>

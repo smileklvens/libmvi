@@ -59,8 +59,10 @@ dependencies {
     //    api libs.material_dialogs_core
     //    api libs.material_dialogs_lifecycle
     api libs.BRVAH
+    api libs.lottie
     //刷新框架 1.1.0 androidx 版本
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
     api 'com.ikang.libglide:libglide:1.1.2'
     implementation files('libs/tbs_sdk_thirdapp_v4.3.0.1148_43697_sharewithdownloadwithfile_withoutGame_obfs_20190805_175505.jar')
+    implementation project(path: ':libeasyshow')
 }

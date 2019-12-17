@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemData"
+            type="com.ikang.staffapp.data.entity.MeListBean" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/meHeadercl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/meHeaderIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/basic_color_placeholder"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/meHeaderNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="杨峰"
+            android:textColor="@color/text_light_dark"
+            android:textSize="@dimen/text_size_20_dp"
+            app:layout_constraintLeft_toRightOf="@+id/meHeaderIv"
+            app:layout_constraintTop_toTopOf="@+id/meHeaderIv" />
+
+        <TextView
+            android:id="@+id/meHeaderPositionTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_gray_hollow_corner"
+            android:text="产品经理"
+            android:textColor="@color/text_light_dark"
+            android:textSize="@dimen/text_size_16_dp"
+            app:layout_constraintLeft_toRightOf="@+id/meHeaderIv"
+            app:layout_constraintTop_toBottomOf="@+id/meHeaderNameTv" />
+
+        <View
+            android:id="@+id/meHeaderLineView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/basic_line"
+            app:layout_constraintTop_toBottomOf="@+id/meHeaderIv" />
+
+        <TextView
+            android:id="@+id/meHeaderBottom1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="年假\n100"
+            android:textColor="@color/text_light_dark"
+            android:textSize="@dimen/text_size_16_dp"
+            app:layout_constraintDimensionRatio="h,258:106"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/meHeaderBottom2"
+            app:layout_constraintTop_toBottomOf="@+id/meHeaderLineView" />
+
+        <TextView
+            android:id="@+id/meHeaderBottom2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="年假\n100"
+            android:textColor="@color/text_light_dark"
+            android:textSize="@dimen/text_size_16_dp"
+            app:layout_constraintBottom_toBottomOf="@+id/meHeaderBottom1"
+            app:layout_constraintDimensionRatio="h,258:106"
+            app:layout_constraintLeft_toRightOf="@id/meHeaderBottom1"
+            app:layout_constraintRight_toLeftOf="@id/meHeaderBottom3"
+            app:layout_constraintTop_toTopOf="@+id/meHeaderBottom1" />
+
+        <TextView
+            android:id="@+id/meHeaderBottom3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="年假\n100"
+            android:textColor="@color/text_light_dark"
+            android:textSize="@dimen/text_size_16_dp"
+            app:layout_constraintBottom_toBottomOf="@+id/meHeaderBottom1"
+            app:layout_constraintDimensionRatio="h,258:106"
+            app:layout_constraintLeft_toRightOf="@+id/meHeaderBottom2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/meHeaderBottom1" />
+
+        <View
+            android:id="@+id/meHeaderLineView2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/basic_line"
+            app:layout_constraintTop_toBottomOf="@+id/meHeaderBottom1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

@@ -1,77 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-                name="itemData"
-                type="com.ikang.staffapp.data.entity.ArticlesBean" />
+            name="itemData"
+            type="com.ikang.staffapp.data.entity.ArticlesBean" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout style="@style/commonItem">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/commonItem"
+        android:layout_width="match_parent">
 
         <TextView
-                android:id="@+id/tv_project_list_atticle_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/dp_4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/tv_project_list_atticle_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-                android:id="@+id/iv_project_list_atticle_ic"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="@dimen/dp_10"
-                android:scaleType="centerCrop"
-                app:imageUrl="@{itemData.url}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_type" />
+            android:id="@+id/iv_project_list_atticle_ic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{itemData.url}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_type" />
 
         <TextView
-                android:id="@+id/tv_project_list_atticle_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_10"
-                android:layout_marginTop="@dimen/dp_10"
-                android:ellipsize="end"
-                android:lineSpacingExtra="@dimen/dp_4"
-                android:maxLines="2"
-                android:text="@{itemData.title}"
-                android:textSize="@dimen/sp_14"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_project_list_atticle_ic"
-                app:layout_constraintTop_toTopOf="@+id/iv_project_list_atticle_ic" />
+            android:id="@+id/tv_project_list_atticle_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/dp_4"
+            android:maxLines="2"
+            android:text="@{itemData.title}"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_project_list_atticle_ic"
+            app:layout_constraintTop_toTopOf="@+id/iv_project_list_atticle_ic" />
 
 
         <TextView
-                android:id="@+id/tv_project_list_atticle_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:text="@{itemData.desc}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tv_project_list_atticle_title"
-                app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_title" />
+            android:id="@+id/tv_project_list_atticle_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="@{itemData.desc}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_project_list_atticle_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_project_list_atticle_title" />
 
         <TextView
-                android:id="@+id/tv_project_list_atticle_auther"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@+id/tv_project_list_atticle_time"
-                app:layout_constraintTop_toTopOf="@+id/tv_project_list_atticle_time"
-                tools:text="auther" />
+            android:id="@+id/tv_project_list_atticle_auther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tv_project_list_atticle_time"
+            app:layout_constraintTop_toTopOf="@+id/tv_project_list_atticle_time"
+            tools:text="auther" />
 
         <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:scaleType="centerCrop"
-                app:imageUrl="@{@string/url}"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{@string/url}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

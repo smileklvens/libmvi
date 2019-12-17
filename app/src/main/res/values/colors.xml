@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="common_blue">#03a9f4</color>
-    <color name="common_white">#ffffff</color>
+    <!--底部导航栏-->
+    <color name="color_808080">#808080</color>
+    <color name="color_888888">#888888</color>
+    <color name="color_444444">#444444</color>
 </resources>

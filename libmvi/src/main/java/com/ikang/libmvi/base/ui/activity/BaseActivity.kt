@@ -31,6 +31,8 @@ import java.lang.reflect.ParameterizedType
 abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompatActivity(),
     IBaseView {
 
+    //是否第一次加载
+    private var isFirst: Boolean = true
     protected lateinit var viewModel: VM
     protected var mBinding: DB? = null
 
@@ -208,7 +210,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
     /**
      * 失败后点击刷新
      */
-    protected fun onRefresh() {
+    protected open fun onRefresh() {
     }
 
 

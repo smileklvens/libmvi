@@ -8,6 +8,12 @@
     <string name="nav_to_x5">nav_to_x5</string>
     <string name="api">调接口</string>
 
-
-
+    <string name="login_input_phone">请输入手机号</string>
+    <string name="login_sms_verification_code">短信验证码</string>
+    <string name="login_login">登录</string>
+    <string name="news_news">消息</string>
+    <string name="schedule_schedule">日程</string>
+    <string name="workbench_workbench">工作台</string>
+    <string name="schedule_contacts">通讯录</string>
+    <string name="me_me">我的</string>
 </resources>

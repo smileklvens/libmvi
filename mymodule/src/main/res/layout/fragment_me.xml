@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        style="@style/MatchMatch.Vertical"
-        tools:ignore="ResourceName">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ResourceName">
 
-    <TextView
-            android:id="@+id/tv"
-            style="@style/MatchWrap"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="nav_bar_user" />
+    <data>
 
-    <TextView
-            android:id="@+id/tv_quit"
-            style="@style/MatchWrap"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="nav_bar_back" />
+        <variable
+            name="itemData"
+            type="com.ikang.staffapp.data.entity.MeListBean" />
+    </data>
 
-</LinearLayout>
+    <LinearLayout
+        style="@style/MatchMatch.Vertical">
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/meSmartRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/meRecyclerView"
+                style="@style/MatchMatch"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_article_list" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>
+

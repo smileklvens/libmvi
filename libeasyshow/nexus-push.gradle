@@ -1,0 +1,28 @@
+apply plugin: 'maven'
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives androidSourcesJar
+}
+
+//gradlew uploadArchives
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://nexus.ikang.com/content/repositories/Android/") {
+                authentication(userName: "admin", password: "admin123")//账号，密码
+            }
+            pom.project {
+                version '1.0.4'
+                artifactId 'lib.easyshow'
+                groupId 'com.ikang.libeasyshow'
+                packaging 'aar'
+                description 'dependences lib'
+            }
+        }
+    }
+}

@@ -22,5 +22,8 @@
     <dimen name="dialog_width">120dp</dimen>
 
     <!--文字尺寸-->
-    <dimen name="text_size_16_sp">16dp</dimen>
+    <dimen name="text_size_10_dp">10dp</dimen>
+    <dimen name="text_size_16_dp">16dp</dimen>
+    <dimen name="text_size_18_dp">18dp</dimen>
+    <dimen name="text_size_20_dp">20dp</dimen>
 </resources>
