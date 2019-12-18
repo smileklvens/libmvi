@@ -1,2 +1,1 @@
-include ':app', ':libmvi', ':loginmodule', ':providerservice', ':mymodule', ':libeasyshow'
-include ':app', ':libmvi', ':libutils'
+include ':app', ':libmvi', ':loginmodule', ':providerservice', ':mymodule', ':libutils'

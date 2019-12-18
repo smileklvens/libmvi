@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.StrictMode
 import android.util.Log
 import androidx.multidex.MultiDex
+import com.alibaba.android.arouter.launcher.ARouter
 import com.ikang.libmvi.BuildConfig
 import com.ikang.providerservice.delegate.AppDelegate
 import com.tencent.smtt.sdk.QbSdk
@@ -19,20 +20,35 @@ import kotlin.properties.Delegates
  */
 open class BaseApp : Application() {
 
+    companion object {
+        var instance: Application by Delegates.notNull()
+            private set
+    }
 
     val mAppDelegate: AppDelegate by lazy { AppDelegate(this) }
 
     override fun onCreate() {
         super.onCreate()
-        if (BuildConfig.DEBUG) {
-            enableStrictMode()
-        }
+        instance = this
+
+//        if (BuildConfig.DEBUG) {
+//            enableStrictMode()
+//        }
+
+        initArouter()
 
         mAppDelegate.onCreate(this)
 
-        instance = this
 
         initX5WebView()
+    }
+
+    private fun initArouter() {
+        if (BuildConfig.DEBUG) {           // 这两行必须写在init之前，否则这些配置在init过程中将无效
+            ARouter.openLog();     // 打印日志
+            ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+        }
+        ARouter.init(this); // 尽可能早，推荐在Application中初始化
     }
 
     override fun onTerminate() {
@@ -75,8 +91,5 @@ open class BaseApp : Application() {
     }
 
 
-    companion object {
-        var instance: Context by Delegates.notNull()
-            private set
-    }
+
 }

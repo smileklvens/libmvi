@@ -63,7 +63,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
         mViewPage.adapter = homePageAdapter
         mViewPage.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
-                mBottomNavBar.selectTab(position)
+//                mBottomNavBar.selectTab(position)
             }
 
         })
