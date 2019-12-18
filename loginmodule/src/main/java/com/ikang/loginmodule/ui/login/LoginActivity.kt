@@ -17,18 +17,23 @@
 package com.ikang.staffapp.ui.login
 
 import android.os.Bundle
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.ikang.libmvi.base.NoViewModel
 import com.ikang.libmvi.base.ui.activity.BaseActivity
 import com.ikang.libmvi.util.ext.click
 import com.ikang.loginmodule.R
 import com.ikang.loginmodule.databinding.ActivityLoginBinding
 import com.ikang.loginmodule.ui.widget.EdittextClearCombination
+import com.ikang.providerservice.router.RouterActPath
 import kotlinx.android.synthetic.main.activity_login.*
 
 
 /**
  * 如果不需要自己定义ViewModel，可以使用公共的NoViewModel
  */
+
+//@Route(path = RouterActPath.Login.NAV_LOGIN)
+@Route(path = RouterActPath.Login.NAV_LOGIN)
 class LoginActivity : BaseActivity<NoViewModel, ActivityLoginBinding>(), EdittextClearCombination.ITextStandardListener  {
 
     //当前手机号是否合法

@@ -8,6 +8,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
 android {
     compileSdkVersion build_version.compileSdkVersion
 
@@ -82,9 +88,12 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(path: ':libmvi')
-//    业务交互模块
-    implementation project(path: ':providerservice')
+    //    基础模块
+    api project(path: ':libmvi')
+    //    业务交互模块
+    api project(path: ':providerservice')
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
+
 }
 
 

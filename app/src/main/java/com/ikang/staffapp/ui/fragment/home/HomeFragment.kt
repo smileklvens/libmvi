@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.aleyn.mvvm.event.Message
+import com.alibaba.android.arouter.launcher.ARouter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.ikang.libmvi.base.ui.fragment.BaseRefreshMoreFragment
 import com.ikang.libmvi.util.ext.observe
+import com.ikang.providerservice.router.RouterActPath
 import com.ikang.staffapp.R
 import com.ikang.staffapp.databinding.FragmentHomeBinding
 import com.ikang.staffapp.ui.fragment.home.HomeListAdapter
@@ -75,8 +77,11 @@ class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>
         view: View,
         position: Int
     ) {
-        val intent = Intent(context, LoginActivity::class.java)
-        startActivity(intent)
+
+        ARouter.getInstance().build(RouterActPath.Login.NAV_LOGIN).navigation()
+
+//        val intent = Intent(context, LoginActivity::class.java)
+//        startActivity(intent)
     }
 
     override fun lazyLoadData() {
